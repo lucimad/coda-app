@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}My Outlines{% endblock %}
+
+{% block content %}
+
+<h2>My Course Outlines</h2>
+
+<div class="top-actions">
+    <a href="{{ url_for('professor.create_outline') }}" class="btn primary">Create New Outline</a>
+</div>
+
+{% if outlines %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Course</th>
+            <th>Term</th>
+            <th>Status</th>
+            <th>Updated</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for o in outlines %}
+        <tr>
+            <td>{{ o.course_code }} – {{ o.course_title }}</td>
+            <td>{{ o.term }}</td>
+            <td>{{ o.status }}</td>
+            <td>{{ o.updated_at.strftime('%Y-%m-%d') }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>You have no outlines yet.</p>
+{% endif %}
+
+{% endblock %}
