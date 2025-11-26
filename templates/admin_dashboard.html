@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+
+<h2>Admin Dashboard</h2>
+
+{% if outlines %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Professor</th>
+            <th>Course</th>
+            <th>Term</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for o in outlines %}
+        <tr>
+            <td>{{ o.user.name }}</td>
+            <td>{{ o.course_code }} – {{ o.course_title }}</td>
+            <td>{{ o.term }}</td>
+            <td>{{ o.status }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No outlines submitted yet.</p>
+{% endif %}
+
+{% endblock %}
