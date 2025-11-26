@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Create Outline{% endblock %}
+
+{% block content %}
+
+<h2>Create Outline</h2>
+
+<form method="POST" class="form">
+
+    <h3>Course Information</h3>
+
+    <label>Course Code:</label>
+    <input type="text" name="course_code" required>
+
+    <label>Course Title:</label>
+    <input type="text" name="course_title" required>
+
+    <label>Term:</label>
+    <input type="text" name="term" required>
+
+    <label>Language:</label>
+    <input type="text" name="language" placeholder="EN / FR" required>
+
+    <label>Credits:</label>
+    <input type="text" name="credits" required>
+
+    <label>Modality:</label>
+    <input type="text" name="modality" required>
+
+
+
+    <h3>Professor</h3>
+
+    <label>Name:</label>
+    <input type="text" name="professor_name" required>
+
+    <label>Email:</label>
+    <input type="email" name="professor_email" required>
+
+    <label>Office Hours:</label>
+    <input type="text" name="office_hours">
+
+    <label>Location:</label>
+    <input type="text" name="location">
+
+    <label>Teaching Assistant:</label>
+    <input type="text" name="teaching_assistant">
+
+
+    <h3>Policies</h3>
+
+    <textarea name="policies_text" rows="6"></textarea>
+
+
+    <button class="btn primary" type="submit">Save Outline</button>
+
+</form>
+
+{% endblock %}
