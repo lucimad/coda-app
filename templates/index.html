@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Welcome to CODA{% endblock %}
+
+{% block content %}
+
+<h1>Welcome to CODA</h1>
+<p>An automated platform for creating and managing course outlines.</p>
+
+<div class="home-buttons">
+    <a class="btn" href="{{ url_for('main.login') }}">Login</a>
+    <a class="btn" href="{{ url_for('main.register') }}">Register</a>
+</div>
+
+{% endblock %}
