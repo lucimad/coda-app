@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Outline Details{% endblock %}
+
+{% block content %}
+
+<h2>{{ outline.course_code }} – {{ outline.course_title }}</h2>
+
+<p><strong>Term:</strong> {{ outline.term }}</p>
+<p><strong>Language:</strong> {{ outline.language }}</p>
+<p><strong>Credits:</strong> {{ outline.credits }}</p>
+
+<p><strong>Status:</strong> {{ outline.status }}</p>
+
+{% endblock %}
